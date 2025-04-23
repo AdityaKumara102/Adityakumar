@@ -1,0 +1,478 @@
+/* Basic Reset & Defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Use Poppins or your chosen font */
+    line-height: 1.6;
+    color: #333; /* Dark text color */
+    background-color: #f8f8f8; /* Light background */
+    /* Use dark theme like original? */
+    /* background-color: #111; */
+    /* color: #eee; */
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Links */
+a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+/* Dark theme link color */
+/* a { color: #6cceff; } */
+
+a:hover {
+    color: #0056b3; /* Darker link color on hover */
+     /* Dark theme link hover */
+    /* color: #a1e0ff; */
+}
+
+/* Headings */
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-weight: 700; /* Bolder headings */
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Header */
+#main-header {
+    position: fixed; /* Stick to top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    /* Dark theme header */
+    /* background-color: rgba(10, 10, 10, 0.9); */
+    padding: 1rem 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333; /* Logo text color */
+     /* Dark theme logo color */
+    /* color: #eee; */
+}
+.logo:hover {
+    color: #333;
+     /* Dark theme logo hover */
+    /* color: #eee; */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 2rem;
+}
+
+.main-nav a {
+    font-weight: 500;
+    color: #555; /* Nav link color */
+     /* Dark theme nav color */
+    /* color: #ccc; */
+    position: relative;
+    padding-bottom: 5px;
+}
+.main-nav a:hover {
+   color: #007bff; /* Active/hover link color */
+    /* Dark theme nav hover */
+   /* color: #6cceff; */
+}
+.main-nav a::after { /* Underline effect */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    /* Dark theme underline */
+    /* background-color: #6cceff; */
+    transition: width 0.3s ease;
+}
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* Mobile Nav Toggle */
+.mobile-nav-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #333;
+    /* Dark theme toggle */
+    /* color: #eee; */
+}
+
+
+/* Hero Section */
+.hero-section {
+    padding-top: 120px; /* Account for fixed header */
+    padding-bottom: 60px;
+    min-height: 70vh; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #e9ecef; /* Light gray background */
+    /* Dark theme hero */
+    /* background-color: #222; */
+    /* Add background image/gradient/pattern here if desired */
+    /* background: url('images/hero-bg.jpg') no-repeat center center/cover; */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    /* Dark theme subtitle */
+    /* color: #bbb; */
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+
+.cta-button { /* Optional button */
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Work Section */
+.work-section {
+    padding: 60px 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+}
+
+.portfolio-item {
+    background-color: #fff;
+     /* Dark theme item */
+    /* background-color: #2a2a2a; */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-item a {
+    display: block;
+    color: inherit; /* Inherit text color from parent */
+}
+.portfolio-item a:hover {
+    color: inherit;
+}
+
+.portfolio-item img {
+    display: block;
+    width: 100%;
+    height: 250px; /* Fixed height for images */
+    object-fit: cover; /* Crop images nicely */
+    transition: opacity 0.3s ease;
+}
+.portfolio-item:hover img {
+   opacity: 0.85;
+}
+
+
+.portfolio-info {
+    padding: 1.5rem;
+    position: relative; /* For the arrow */
+}
+
+.portfolio-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-info p {
+    font-size: 0.9rem;
+    color: #777;
+     /* Dark theme text */
+    /* color: #aaa; */
+    margin-bottom: 0;
+}
+
+.portfolio-info .arrow {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+     /* Dark theme arrow */
+    /* color: #6cceff; */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .arrow {
+    opacity: 1;
+}
+
+
+/* Services Section */
+.services-section {
+    padding: 60px 0;
+    background-color: #e9ecef; /* Light gray background */
+    /* Dark theme services */
+    /* background-color: #222; */
+}
+
+.services-tabs {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ccc;
+     /* Dark theme border */
+    /* border-bottom: 1px solid #444; */
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #666;
+     /* Dark theme button color */
+    /* color: #bbb; */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tab-button::after { /* Bottom border indicator */
+    content: '';
+    position: absolute;
+    bottom: -1px; /* Align with parent border */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #007bff;
+     /* Dark theme active color */
+    /* background-color: #6cceff; */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tab-button.active {
+    color: #007bff;
+     /* Dark theme active color */
+    /* color: #6cceff; */
+}
+
+.tab-button.active::after {
+    transform: scaleX(1);
+}
+
+.tab-pane {
+    display: none; /* Hide inactive panes */
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-pane.active {
+    display: block; /* Show active pane */
+}
+
+.tab-pane p {
+    margin-bottom: 1rem;
+}
+
+.service-tags {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+     /* Dark theme tags */
+    /* color: #ccc; */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Footer */
+.main-footer {
+    background-color: #343a40; /* Dark footer */
+    color: #eee; /* Light text */
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 2rem; /* Spacing between columns */
+    margin-bottom: 30px;
+}
+
+.footer-column {
+    flex: 1; /* Allow columns to grow */
+    min-width: 200px; /* Minimum width before wrapping */
+}
+
+.footer-column h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-column p, .footer-column a {
+    color: #ccc; /* Lighter gray for text/links */
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-column a:hover {
+    color: #fff; /* White on hover */
+}
+
+.social-links a {
+    margin-right: 5px;
+}
+.social-links a:last-child {
+    margin-right: 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #495057; /* Separator line */
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px; /* Adjust base font size */
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    .header-container {
+        position: relative; /* Needed for absolute positioning of nav */
+    }
+
+    .main-nav {
+        display: none; /* Hide desktop nav */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background-color: #fff; /* White background for dropdown */
+        /* Dark theme mobile nav */
+        /* background-color: #222; */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+    }
+
+    .main-nav.active { /* Class added by JS */
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+    }
+
+    .main-nav li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav a {
+        display: block; /* Make links take full width */
+        padding: 0.8rem 1rem;
+         /* Dark theme mobile link */
+        /* color: #eee; */
+    }
+     .main-nav a:hover {
+        background-color: #f1f1f1;
+         /* Dark theme mobile link hover */
+        /* background-color: #333; */
+     }
+    .main-nav a::after {
+        display: none; /* Hide underline on mobile */
+    }
+
+    .mobile-nav-toggle {
+        display: block; /* Show hamburger */
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Stack items on mobile */
+    }
+
+     .footer-content {
+        flex-direction: column; /* Stack footer columns */
+        text-align: center;
+    }
+}
